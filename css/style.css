@@ -1,0 +1,771 @@
+/* Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@400;800&display=swap");
+@font-face {
+  font-family: "Gotham";
+  src: url("Gotham-Black.woff2") format("woff2"), url("Gotham-Black.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Declaring Sass Color Variables */
+/* Declaring Reusable Mixings*/
+/* Styling Starts Here */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Suse";
+  color: #ffffff;
+  background-color: #191614;
+}
+
+.logo img {
+  width: 60%;
+}
+
+.logo img:hover {
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+.hamburger:hover {
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.header {
+  background-image: url("../img/hero-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero {
+  margin: 10% 0 0 0;
+}
+.hero h4 {
+  color: #C7A78A;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-family: "Suse";
+  font-weight: 800;
+  margin: 50px 0px 0px 0px;
+}
+.hero h1 {
+  color: #ffffff;
+  font-size: 73px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 700;
+  margin: 40px 0px 0px 0px;
+}
+.hero h1 span {
+  color: #C7A78A;
+}
+.hero p {
+  color: #ffffff;
+  font-size: 20px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+  margin: 40px 0px 0px 0px;
+}
+.hero a {
+  color: #191614;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: "Suse";
+  font-weight: 800;
+  background-color: #C7A78A;
+  padding: 20px;
+  border-radius: 40px;
+  width: 60%;
+  margin: 70px 90px 0px 0px;
+  text-decoration: none;
+}
+.hero a:hover {
+  background-color: #977657;
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+.hero-right {
+  position: relative;
+}
+
+/* Hamburger Styling*/
+.menu-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background-color: #C7A78A;
+  z-index: 999;
+  border-radius: 0px 0px 0px 300px;
+  border-width: 0px;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 36px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #191614;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: "Gotham";
+  font-weight: 800;
+  transition: 0.5s ease-in-out;
+}
+
+.menu a:hover {
+  color: #ffffff;
+}
+
+.menu li.active a {
+  color: #ffffff;
+}
+
+.menu-container img {
+  cursor: pointer;
+}
+
+/* Booking Form Styling */
+/* Modal Background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.76);
+  z-index: 1000;
+  padding: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #C7A78A;
+  border-radius: 40px;
+  height: auto;
+  width: auto;
+  max-height: 100vh; /* Adjust as needed */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: -16px;
+  right: 10px;
+  cursor: pointer;
+}
+.close img:hover {
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+.bk-modal-header {
+  background-image: url("../img/booking-header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 100px 40px 40px;
+  border-radius: 40px 40px 0px 0px;
+  margin-left: -10px;
+}
+.bk-modal-header h1 {
+  color: #ffffff;
+  font-size: 73px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 800;
+}
+.bk-modal-header h1 span {
+  color: #C7A78A;
+}
+.bk-modal-header h4 {
+  color: #C7A78A;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-family: "Suse";
+  font-weight: 800;
+}
+
+.booking-form {
+  padding: 40px;
+}
+.booking-form input {
+  width: 100%;
+  background-color: #C7A78A;
+  padding: 20px;
+  border-radius: 40px;
+  border: solid 2px;
+  border-color: #ffffff;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 800;
+  outline: none;
+  margin-top: 10px;
+}
+.booking-form input::-moz-placeholder {
+  color: #ffffff;
+  font-weight: 400;
+}
+.booking-form input::placeholder {
+  color: #ffffff;
+  font-weight: 400;
+}
+.booking-form input:focus {
+  border-color: #fff; /* Optional: border color when focused */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+}
+.booking-form input:select {
+  border: solid 4px;
+}
+.booking-form span {
+  color: #191614;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: "Suse";
+  font-weight: 800;
+}
+
+/* Lock the Scroll on the Body when Modal is Open*/
+.no-scroll {
+  overflow: hidden;
+}
+
+/*Select Option Input*/
+.booking-form {
+  /* For better visual appearance, you might want to add custom styles for focus */
+}
+.booking-form select {
+  background: none; /* Removes background */
+  border: 2px solid white; /* White solid border with 2px thickness */
+  border-radius: 40px; /* Rounded corners with 40px radius */
+  padding: 10px 20px; /* Padding inside the select element */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  outline: none; /* Removes default focus outline */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; /* Removes default styling in some browsers */
+  outline: none; /* Removes default focus outline */
+  cursor: pointer; /* Adds a pointer cursor */
+  width: 100%;
+}
+.booking-form select:focus {
+  border-color: #ffffff; /* Optional: border color when focused */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+}
+.booking-form option {
+  background-color: #191614; /* Background color of options */
+  color: #ffffff; /* Text color of options */
+  border-radius: 40px; /* Rounded corners for options (not fully supported) */
+  padding: 10px 20px; /* Padding inside the options (not fully supported) */
+}
+.booking-form select option:hover {
+  background-color: #977657;
+}
+
+/* Booking Form Button Styling */
+.booking-form input[type=submit] {
+  background-color: #927C69;
+  border-radius: 40px;
+  padding: 20px;
+  width: 40%;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: "Suse";
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+}
+.booking-form input[type=submit]:hover {
+  background-color: #191614;
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+  border: none;
+}
+
+/* About Section Styling */
+.about {
+  background-color: #100F0E;
+  padding: 60px 0px 60px 0px;
+}
+.about h1 {
+  color: #ffffff;
+  font-size: 73px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 800;
+}
+.about h1 span {
+  color: #C7A78A;
+}
+.about p {
+  color: #ffffff;
+  font-size: 20px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+  margin-top: 15px;
+}
+.about img {
+  width: 90%;
+  height: auto;
+  position: relative;
+  float: right;
+}
+.about img:hover {
+  transition: 1s ease-in-out;
+  transform: rotateY(40deg);
+}
+
+/* Styling the Types Section Starts Here*/
+.Types {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.Types h1 {
+  color: #ffffff;
+  font-size: 73px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 800;
+}
+.Types h1 span {
+  color: #C7A78A;
+}
+.Types hr {
+  border: none;
+  height: 2px;
+  background-color: #C7A78A;
+  margin-top: 13%;
+}
+
+.type-block {
+  background-color: #100F0E;
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 20px;
+}
+.type-block h1 {
+  color: #C7A78A;
+  font-size: 24px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 800;
+}
+.type-block h4 {
+  color: #4B453E;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: "Suse";
+  font-weight: 800;
+  margin-top: 30px;
+}
+.type-block p {
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+  margin-top: 30px;
+}
+.type-block a {
+  color: #C7A78A;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: "Suse";
+  font-weight: 800;
+  margin-top: 20px;
+}
+.type-block a:hover {
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+.type-block:hover {
+  transition: 1s ease-in-out;
+  transform: rotateY(30deg);
+}
+
+.Types-img {
+  width: 100%;
+  margin-top: 40px;
+}
+
+/*  Styling the Banner Div */
+.action-banner {
+  background: url("../img/img3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+}
+.action-banner h1 {
+  color: #ffffff;
+  font-size: 73px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 800;
+}
+.action-banner h1 span {
+  color: #C7A78A;
+}
+.action-banner p {
+  color: #ffffff;
+  font-size: 20px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+  margin-top: 30px;
+}
+.action-banner a {
+  color: #191614;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: "Suse";
+  font-weight: 800;
+  background-color: #C7A78A;
+  padding: 20px;
+  border-radius: 40px;
+  width: 30%;
+  margin-top: 30px;
+  text-decoration: none;
+}
+.action-banner a:hover {
+  background-color: #977657;
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+/* Styling the Instructor Section Images */
+.instructor-img {
+  width: 50%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.social img {
+  width: 46px;
+  height: auto;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+.social img:hover {
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+/* Styling the Newsletter Section */
+.newsletter {
+  background: url("../img/img4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 70px 40px 70px 40px;
+  border-radius: 20px;
+}
+.newsletter h1 {
+  color: #ffffff;
+  font-size: 63px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 800;
+}
+.newsletter h1 span {
+  color: #C7A78A;
+}
+.newsletter input[type=email] {
+  background-color: transparent;
+  border-radius: 40px;
+  border: solid 2px #ffffff;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+  padding: 10px;
+  margin-right: 20px;
+  width: 60%;
+  outline: none;
+}
+.newsletter input[type=email]:focus {
+  border-color: #fff; /* Optional: border color when focused */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+}
+.newsletter input[type=email]:select {
+  border-color: #fff; /* Optional: border color when focused */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+}
+.newsletter input[type=email]::-moz-placeholder {
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+}
+.newsletter input[type=email]::placeholder {
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+}
+.newsletter input[type=submit] {
+  background-color: #C7A78A;
+  border-radius: 40px;
+  text-decoration: none;
+  outline: none;
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  color: #191614;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: "Suse";
+  font-weight: 800;
+}
+.newsletter input[type=submit]:hover {
+  background-color: #977657;
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+/* Footer Styling */
+.footer {
+  margin-top: 60px;
+}
+.footer h1 {
+  color: #ffffff;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "Gotham";
+  font-weight: 800;
+}
+.footer p {
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+}
+.footer a {
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: "Suse";
+  font-weight: 400;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #C7A78A;
+  transition: 0.6s ease-in-out;
+}
+.footer hr {
+  border: none;
+  height: 1px;
+  background-color: #C7A78A;
+  margin-top: 30px;
+  width: 100%;
+}
+.footer h4 {
+  color: #C7A78A;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-family: "Suse";
+  font-weight: 800;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-icon {
+  width: 46px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.footer-logo {
+  width: 60%;
+  height: auto;
+}
+
+.social-icons {
+  width: 40px;
+  height: auto;
+  margin-right: 16px;
+  margin-top: 30px;
+}
+
+.social-icons:hover {
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+.footer-button a {
+  color: #191614;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: "Suse";
+  font-weight: 800;
+  background-color: #C7A78A;
+  padding: 20px;
+  border-radius: 40px;
+  width: 100%;
+  margin-top: 30px;
+  text-decoration: none;
+}
+.footer-button a:hover {
+  background-color: #977657;
+  transition: 0.6s ease-in-out;
+  scale: 1.13;
+}
+
+/* Media Queries for Tablet */
+@media screen and (max-width: 1024px) and (min-width: 0px) {
+  .menu-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #C7A78A;
+    z-index: 999;
+    border-radius: 0px 0px 0px 300px;
+    border-width: 0px;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.76);
+    z-index: 1000;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .booking-form input[type=submit] {
+    background-color: #927C69;
+    border-radius: 40px;
+    padding: 20px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: "Suse";
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+  }
+  .booking-form h1 {
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-family: "Gotham";
+    font-weight: 800;
+  }
+  .booking-form h1 span {
+    color: #C7A78A;
+  }
+  .booking-form h4 {
+    color: #C7A78A;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-family: "Suse";
+    font-weight: 800;
+    margin-top: 40px;
+  }
+  .close {
+    position: absolute;
+    top: -16px;
+    right: 10px;
+    cursor: pointer;
+    width: 76px;
+  }
+  .action-banner a {
+    width: 100%;
+  }
+  .action-banner h1 {
+    font-size: 36px;
+  }
+  .footer {
+    position: float;
+    align-items: center;
+  }
+}/*# sourceMappingURL=style.css.map */

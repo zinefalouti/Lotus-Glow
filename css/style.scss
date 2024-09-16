@@ -1,0 +1,739 @@
+/* Importing Fonts */
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Black.woff2') format('woff2'),
+        url('Gotham-Black.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@400;800&display=swap');
+
+$Gotham: 'Gotham';
+$Suse: 'Suse';
+
+
+/* Declaring Sass Color Variables */
+$BG-Color: #191614;
+$MainColor: #C7A78A;
+$Dark-Color:#100F0E;
+$TextColor: #ffffff;
+$HoverColor: #977657;
+
+/* Declaring Reusable Mixings*/
+
+@mixin TextController($FontColor, $Size, $Uppercase, $letterspace, $fontfamily, $weight){
+    color:$FontColor;
+    font-size:$Size;
+    text-transform:$Uppercase;
+    letter-spacing: $letterspace;
+    font-family:$fontfamily;
+    font-weight:$weight;
+}
+
+
+/* Styling Starts Here */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:$Suse;
+    color: $TextColor;
+    background-color: $BG-Color;
+}
+
+.logo img{
+
+    width:60%;
+
+}
+
+.logo img:hover{
+    transition:0.6s ease-in-out;
+    scale:1.13;
+}
+
+
+.hamburger:hover{
+    transition:0.6s ease-in-out;
+    scale:1.13;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+.header{
+    background-image: url('../img/hero-bg.png');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.hero{
+    margin:10% 0 0 0;
+
+    h4{
+        @include TextController($MainColor,14px ,uppercase ,7px ,$Suse ,800 );
+        margin:50px 0px 0px 0px;
+
+    }
+
+    h1{
+        @include TextController($TextColor,73px ,uppercase ,0 ,$Gotham ,700 );
+        margin:40px 0px 0px 0px;
+
+        span{
+            color:$MainColor;
+        }
+
+    }
+
+    p{
+        @include TextController($TextColor,20px ,none ,0 ,$Suse ,400 );
+        margin:40px 0px 0px 0px;
+    }
+
+    a{
+        @include TextController($BG-Color,14px,uppercase,6px,$Suse,800);
+        background-color:$MainColor;
+        padding:20px;
+        border-radius:40px;
+        width:60%;
+        margin:70px 90px 0px 0px;
+        text-decoration:none;
+
+    }
+
+    a:hover{
+        background-color:$HoverColor;
+        transition:0.6s ease-in-out;
+        scale:1.13;
+    }
+
+}
+
+.hero-right{
+    position:relative;
+
+}
+
+/* Hamburger Styling*/
+.menu-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color:$MainColor;
+    z-index: 999;
+    border-radius:0px 0px 0px 300px;
+    border-width:0px;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white;
+  
+  }
+
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 36px 0;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    @include TextController($BG-Color,32px ,uppercase ,4px ,$Gotham ,800 );
+    transition:0.5s ease-in-out;
+  }
+  
+  .menu a:hover{
+    color:$TextColor;
+  }
+  
+  .menu li.active a{
+    color:$TextColor;
+  }
+
+  .menu-container img{
+    cursor:pointer;
+  }
+
+
+  /* Booking Form Styling */
+  /* Modal Background */
+.modal {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.76);;
+    z-index: 1000;
+    padding:160px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: $MainColor;
+    border-radius: 40px;
+    height:auto;
+    width:auto;
+    max-height: 100vh; /* Adjust as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+  }
+  
+  /* Close Button */
+  .close {
+    position: absolute;
+    top: -16px;
+    right: 10px;
+    cursor: pointer;
+
+    img:hover{
+        transition:0.6s ease-in-out;
+        scale:1.13;
+    }
+  }
+  
+  /* Hidden Class */
+  .hidden {
+    display: none;
+  }
+
+  .bk-modal-header{
+    background-image: url('../img/booking-header.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding:100px 100px 40px 40px;
+    border-radius:40px 40px 0px 0px;
+    margin-left:-10px;
+
+    h1{
+        @include TextController($TextColor, 73px, uppercase,0 ,$Gotham ,800 );
+
+        span{
+            color:$MainColor;
+        }
+    }
+
+    h4{
+        @include TextController($MainColor,12px ,uppercase ,7px ,$Suse ,800 );
+    }
+
+  }
+
+  .booking-form{
+    padding:40px;
+
+    input{
+        width:100%;
+        background-color:$MainColor;
+        padding:20px;
+        border-radius:40px;
+        border:solid 2px;
+        border-color:$TextColor;
+        @include TextController($TextColor,14px ,none ,0 ,$Suse ,800 );
+        outline:none;
+        margin-top:10px;
+    }
+
+    input::placeholder{
+        color:$TextColor;
+        font-weight:400;
+    }
+
+    input:focus{
+        border-color: #fff; /* Optional: border color when focused */
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+    }
+
+    input:select{
+        border:solid 4px;
+    }
+
+    span{
+        @include TextController($BG-Color,10px ,uppercase ,4px ,$Suse ,800 );
+    }
+
+  }
+
+/* Lock the Scroll on the Body when Modal is Open*/
+.no-scroll {
+    overflow: hidden;
+  }
+
+/*Select Option Input*/
+.booking-form{
+    select {
+        background: none; /* Removes background */
+        border: 2px solid white; /* White solid border with 2px thickness */
+        border-radius: 40px; /* Rounded corners with 40px radius */
+        padding: 10px 20px; /* Padding inside the select element */
+        color: white; /* Text color */
+        font-size: 16px; /* Font size */
+        outline: none; /* Removes default focus outline */
+        appearance: none; /* Removes default styling in some browsers */
+        outline: none; /* Removes default focus outline */
+        cursor: pointer; /* Adds a pointer cursor */
+        width:100%
+      }
+      
+      /* For better visual appearance, you might want to add custom styles for focus */
+      select:focus {
+        border-color: $TextColor; /* Optional: border color when focused */
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+      }
+
+      option {
+        background-color: $BG-Color; /* Background color of options */
+        color:$TextColor; /* Text color of options */
+        border-radius: 40px; /* Rounded corners for options (not fully supported) */
+        padding: 10px 20px; /* Padding inside the options (not fully supported) */
+      }
+      select option:hover{
+        background-color: $HoverColor;
+      }
+}
+
+
+/* Booking Form Button Styling */
+
+.booking-form{
+
+    input[type=submit]{
+        background-color:#927C69 ;
+        border-radius:40px;
+        padding:20px;
+        width:40%;
+        @include TextController($TextColor,14px ,uppercase ,4px ,$Suse ,800 );
+        border:none;
+        cursor:pointer,
+    }
+
+    input[type=submit]:hover{
+        background-color: $BG-Color;
+        transition: 0.6s ease-in-out;
+        scale:1.13;
+        border:none;
+    }
+    
+
+}
+
+/* About Section Styling */
+
+.about{
+    background-color:$Dark-Color;
+    padding:60px 0px 60px 0px;
+
+    h1{
+        @include TextController($TextColor,73px ,uppercase ,0 ,$Gotham ,800 );
+        
+        span{
+            color:$MainColor;
+        }
+
+    }
+
+    p{
+        @include TextController($TextColor,20px ,none ,0 ,$Suse ,400 );
+        margin-top:15px;
+    }
+    
+
+    img{
+        width:90%;
+        height:auto;
+        position:relative;
+        float:right;
+    }
+
+    img:hover{
+        transition:1s ease-in-out;
+        transform: rotateY(40deg);
+    }
+
+}
+
+
+/* Styling the Types Section Starts Here*/
+
+.Types{
+    padding-top:60px;
+    padding-bottom:60px;
+
+    h1{
+        @include TextController($TextColor, 73px,uppercase ,0 ,$Gotham ,800 );
+
+        span{
+            color:$MainColor;
+        }
+    }
+
+    hr{
+        border:none;
+        height:2px;
+        background-color:$MainColor;
+        margin-top:13%;
+    }
+
+    
+}
+
+.type-block{
+    background-color:$Dark-Color;
+    padding:40px;
+    margin-top:40px;
+    border-radius:20px;
+
+    h1{
+        @include TextController($MainColor,24px ,none ,0 ,$Gotham ,800 );
+    }
+
+    h4{
+        @include TextController(#4B453E,10px,uppercase,6px,$Suse,800);
+        margin-top:30px;
+    }
+    
+    p{
+        @include TextController($TextColor, 14px,none ,0 ,$Suse ,400 );
+        margin-top:30px;
+    }
+
+    a{
+        @include TextController($MainColor,12px,uppercase,6px,$Suse,800);
+        margin-top:20px;
+    }
+
+    a:hover{
+        transition:0.6s ease-in-out;
+        scale:1.13;
+    }
+
+}
+
+.type-block:hover{
+    transition:1s ease-in-out;
+    transform: rotateY(30deg);
+}
+
+.Types-img{
+        width:100%;
+        margin-top:40px;
+}
+
+
+/*  Styling the Banner Div */
+
+.action-banner{
+    background:url('../img/img3.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding:60px;
+    border-radius:20px;
+    text-align:center;
+    width:100%;
+    
+    h1{
+        @include TextController($TextColor,73px ,uppercase ,0 ,$Gotham ,800 );
+
+        span{
+            color:$MainColor;
+        }
+    }
+
+    p{
+        @include TextController($TextColor,20px,none,0,$Suse,400);
+        margin-top:30px;
+    }
+
+    a{
+        @include TextController($BG-Color,14px,uppercase,6px,$Suse,800);
+        background-color:$MainColor;
+        padding:20px;
+        border-radius:40px;
+        width:30%;
+        margin-top:30px;
+        text-decoration:none;
+    }
+
+    a:hover{
+        background-color:$HoverColor;
+        transition:0.6s ease-in-out;
+        scale:1.13;
+    }
+}
+
+/* Styling the Instructor Section Images */
+
+.instructor-img{
+    width: 50%;
+    height:auto;
+    margin-bottom:20px;
+}
+
+.social{
+    img{
+        width:46px;
+        height:auto;
+        margin-right:20px;
+        margin-top:30px;
+    }
+
+    img:hover{
+        transition:0.6s ease-in-out;
+        scale:1.13;
+    }
+}
+
+
+/* Styling the Newsletter Section */
+
+.newsletter{
+    background:url('../img/img4.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding:70px 40px 70px 40px;
+    border-radius:20px;
+
+    h1{
+
+        @include TextController($TextColor,63px ,uppercase ,0 ,$Gotham ,800 );
+
+        span{
+            color:$MainColor;
+        }
+
+    }
+
+    input[type=email]{
+        background-color:transparent;
+        border-radius:40px;
+        border:solid 2px $TextColor;
+        text-decoration:none;
+        @include TextController($TextColor,16px ,none ,0 ,$Suse , 400);
+        padding:10px;
+        margin-right:20px;
+        width:60%;
+        outline:none;
+    }
+
+    input[type=email]:focus{
+        border-color: #fff; /* Optional: border color when focused */
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+    }
+
+    input[type=email]:select{
+        border-color: #fff; /* Optional: border color when focused */
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Optional: add a subtle shadow on focus */
+    }
+
+    input[type=email]::placeholder{
+        @include TextController($TextColor,16px ,none ,0 ,$Suse , 400);
+    }
+
+    input[type=submit]{
+        background-color:$MainColor;
+        border-radius:40px;
+        text-decoration:none;
+        outline:none;
+        width:30%;
+        padding:10px;
+        text-align:center;
+        @include TextController($BG-Color,14px,uppercase ,4px ,$Suse ,800 );
+    }
+
+    input[type=submit]:hover{
+        background-color:$HoverColor;
+        transition:0.6s ease-in-out;
+        scale:1.13;
+    }
+}
+
+
+/* Footer Styling */
+
+.footer{
+    margin-top:60px;
+
+    h1{
+        @include TextController($TextColor,20px ,uppercase ,0 ,$Gotham ,800 );
+    }
+
+    p{
+        @include TextController($TextColor,14px ,none ,0 ,$Suse ,400 );
+    }
+
+    a{
+        @include TextController($TextColor,16px ,none ,0 ,$Suse ,400 );
+        text-decoration:none;
+    }
+
+    a:hover{
+       color:$MainColor;
+       transition:0.6s ease-in-out;
+    }
+
+    hr{
+        border:none;
+        height:1px;
+        background-color:$MainColor;
+        margin-top:30px;
+        width:100%;
+    }
+
+    h4{
+        @include TextController($MainColor,12px ,uppercase ,7px ,$Suse ,800 );
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+}
+
+.footer-icon{
+    width:46px;
+    height:auto;
+    margin-right:20px;
+}
+
+.footer-logo{
+    width:60%;
+    height:auto;
+}
+
+
+.social-icons{
+    width:40px;
+    height:auto;
+    margin-right:16px;
+    margin-top:30px;
+}
+
+.social-icons:hover{
+    transition:0.6s ease-in-out;
+    scale:1.13;
+}
+
+.footer-button{
+    a{
+        @include TextController($BG-Color,14px,uppercase,6px,$Suse,800);
+        background-color:$MainColor;
+        padding:20px;
+        border-radius:40px;
+        width:100%;
+        margin-top:30px;
+        text-decoration:none;
+    }
+
+    a:hover{
+        background-color:$HoverColor;
+        transition:0.6s ease-in-out;
+        scale:1.13;
+    }
+}
+
+
+
+/* Media Queries for Tablet */
+
+@media screen and (max-width: 1024px) and (min-width:0px) {
+
+    .menu-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color:$MainColor;
+        z-index: 999;
+        border-radius:0px 0px 0px 300px;
+        border-width:0px;
+      }
+
+ 
+      .modal {
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.76);;
+        z-index: 1000;
+        padding:40px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .booking-form{
+
+        input[type=submit]{
+            background-color:#927C69 ;
+            border-radius:40px;
+            padding:20px;
+            width:100%;
+            @include TextController($TextColor,14px ,uppercase ,4px ,$Suse ,800 );
+            border:none;
+            cursor:pointer,
+        }
+
+        h1{
+            @include TextController($TextColor, 20px, uppercase,0 ,$Gotham ,800 );
+    
+            span{
+                color:$MainColor;
+            }
+        }
+    
+        h4{
+            @include TextController($MainColor,12px ,uppercase ,7px ,$Suse ,800 );
+            margin-top:40px;
+        }
+    
+    
+    }
+
+    .close {
+        position: absolute;
+        top: -16px;
+        right: 10px;
+        cursor: pointer;
+        width:76px;
+    
+      }
+
+      .action-banner{
+        a{
+            width:100%;
+        }
+
+        h1{
+            font-size:36px;
+        }
+      }
+
+      .footer{
+        position:float;
+        align-items: center;
+      }
+
+}
